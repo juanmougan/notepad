@@ -2,20 +2,17 @@ package main
  
 import (
     "gopkg.in/gin-gonic/gin.v1"
-    "net/http"
+    "models"
+    "mappings"
 )
 
-Router := gin.Default()
-
-func mockData() {
-    notes = append(notes, Note{Title: "My first note", Body: "Brazil beated Argentina very badly :("})
-    notes = append(notes, Note{Title: "Some more notes", Body: "I hope we can defeat Colombia"})
-}
+var Router Router
 
 func main() {
+    Router := gin.Default()
     // TODO eventually use a real DB
-    mockData()
-
+    models.MockData()
+    CreateUrlMappings()
     // Listen and server on 0.0.0.0:8080
-    router.Run(":8080")
+    Router.Run(":8080")
 }

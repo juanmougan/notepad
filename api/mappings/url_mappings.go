@@ -1,15 +1,15 @@
-package main
+package mappings
  
 import (
-    "gopkg.in/gin-gonic/gin.v1"
-    "net/http"
+    "../controllers"
+    "../main"
 )
 
-func createUrlMappings() {
+func CreateUrlMappings() {
     // v1 of the API
-    v1 := router.Group("/v1")
+    v1 := Router.Group("/v1")
     {
-        v1.GET("/notes", allNotesEndpoint)
+        v1.GET("/notes", controllers.AllNotesEndpoint)
         //v1.GET("/notes/:id", findNoteByIdEndpoint)
         //v1.POST("/notes", newNoteEndpoint)
         //v1.PUT("/notes", editNoteEndpoint)
