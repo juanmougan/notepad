@@ -1,11 +1,14 @@
 package mappings
  
 import (
-    "../controllers"
-    "../main"
+    "gopkg.in/gin-gonic/gin.v1"
+    "github.com/juanmougan/notepad/api/controllers"
 )
 
+var Router *gin.Engine
+
 func CreateUrlMappings() {
+    Router := gin.Default()
     // v1 of the API
     v1 := Router.Group("/v1")
     {

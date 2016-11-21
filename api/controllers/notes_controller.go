@@ -3,7 +3,7 @@ package controllers
 import (
     "gopkg.in/gin-gonic/gin.v1"
     "net/http"
-    "../models"
+    "github.com/juanmougan/notepad/api/models"
 )
 
 func AllNotesEndpoint(c *gin.Context) {
